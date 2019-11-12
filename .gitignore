@@ -1,0 +1,9 @@
+# IDE
+.vscode/
+
+# Python
+venv/
+
+# Project
+images/
+geckodriver.log
