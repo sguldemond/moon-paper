@@ -26,12 +26,13 @@ http://neoprogrammics.com/ > Lunar Phase Image Sets > near_side_1024x1024X8.7z
 
 ### Phase Orientation Legend
 
-ANGLE    PHASE             EYE VIEW
-000      New Moon          Sun horizontally aligned with Moon
-090      First Quarter     Sun directly to right
-180      Full Moon         Sun directly behind
-270      Last Quarter      Sun directly to left
-360      New Moon          Sun horizontally aligned with Moon
+| Angle | Phase         | Eye View                           |
+|-------|---------------|------------------------------------|
+| 000   | New Moon      | Sun horizontally aligned with Moon |
+| 090   | First Quarter | Sun directly to right              |
+| 180   | Full Moon     | Sun directly behind                |
+| 270   | Last Quarter  | Sun directly to left               |
+| 360   | New Moon      | Sun horizontally aligned with Moon |
 
 ### Notes
 
