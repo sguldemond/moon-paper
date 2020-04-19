@@ -75,8 +75,9 @@ Now your background should be updated with the current phase of the moon in your
 
 ## Sources
 
-- https://commons.wikimedia.org/wiki/User:JayTanner/lunar-west-side-phase-set
+- http://neoprogrammics.com/lunar_phase_images/ (Images licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/]))
 - https://www.timeanddate.com/moon/phases/
+- https://commons.wikimedia.org/wiki/User:JayTanner/lunar-west-side-phase-set
 
 
 ## Phase Orientation Legend
