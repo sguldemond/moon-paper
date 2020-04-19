@@ -34,7 +34,7 @@ $ git clone https://github.com/sguldemond/moon-paper
 $ cd moon-paper
 ```
 
-Download pictures of the moon:
+**Download pictures of the moon**
 
 (http://neoprogrammics.com/ > Lunar Phase Image Sets > near_side_1024x1024X8.7z)
 
@@ -44,13 +44,13 @@ _or_
 $ wget http://neoprogrammics.com/lunar_phase_images/downloads/near_side_1024x1024x8.7z
 ```
 
-Extract the images:
+**Extract the images**
 
 ```
 $ 7za x near_side_1024x1024x8.7z -o/home/$USER/moon-paper/images
 ```
 
-Install python requirements:
+**Install python requirements**
 
 ```
 $ (optional) python3 -m venv venv
@@ -58,7 +58,7 @@ $ (optional) source venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-Setup and install:
+**Setup and install**
 
 ```
 # chmod +x setup_and_install.sh
@@ -70,7 +70,7 @@ Look inside this shell script file to see the different steps taken.
 
 Now your background should be updated with the current phase of the moon in your location and every 2 hours it will update.
 
-**Enjoy :)**
+**Enjoy and get in sync with the moon!**
 
 
 ## Sources
@@ -95,7 +95,7 @@ Now your background should be updated with the current phase of the moon in your
 Images used:
 http://neoprogrammics.com/lunar_phase_images/downloads/near_side_256x256x8.7z
 
-Create GIF:
+**Create GIF**
 
 ```
 # apt install imagemagick
@@ -105,17 +105,17 @@ $ animate moon.gif
 
 ## Notes
 
-List all cron jobs (of current user):
+List all cron jobs (of current user)
 ```
 crontab -l
 ```
 
-Edit cron jobs to remove background update:
+Edit cron jobs to remove background update
 ```
 crontab -e
 ```
 
-Bash without profile:
+Bash without profile
 ```
 env -i /bin/bash --noprofile --norc
 ```
@@ -132,4 +132,5 @@ From `man dconf`: _"Note that dconf needs a D-Bus session bus connection to writ
 # dbus-launch
 # export $(dbus-launch)
 ```
+s
 Source: https://stackoverflow.com/questions/41242460/how-to-export-dbus-session-bus-address
