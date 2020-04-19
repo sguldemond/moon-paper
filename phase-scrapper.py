@@ -9,9 +9,6 @@ options = Options()
 options.add_argument('--headless')
 driver = webdriver.Firefox(options=options, executable_path='/usr/bin/geckodriver')
 
-with open('./config.json', 'r') as config_file:
-    config = config_file.read()
-
 # location is set automatically based on location of user
 url = 'https://www.timeanddate.com/moon/phases/'
 driver.get(url)
