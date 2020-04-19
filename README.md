@@ -1,11 +1,9 @@
 # Moon Paper
 
-Update your wallpaper with the an image of the real time phase of the moon.
+Update your wallpaper with the an image of the real time phase of the moon in your location.
 
 Currently working with Ubuntu running Gnome 3.34.1
-
-*Work in progress:*
-Depending on your location you can download 
+Also had it working on Mate, see `change_background.py`. By changing the calls from `gsettings` to `dconf` it should work for Mate.
 
 ## Requirements
 
@@ -26,7 +24,7 @@ Depending on your location you can download
 
 ## Install
 
-Clone this repository in your home directory
+Clone this repository in your **home directory**!
 
 ```
 $ cd ~
@@ -35,14 +33,22 @@ $ cd moon-paper
 ```
 
 Download pictures of the moon
+
 (http://neoprogrammics.com/ > Lunar Phase Image Sets > near_side_1024x1024X8.7z)
+
+or
 
 ```
 $ wget http://neoprogrammics.com/lunar_phase_images/downloads/near_side_1024x1024x8.7z
+```
+
+Extract the images
+
+```
 $ 7za x near_side_1024x1024x8.7z -o/home/$USER/moon-paper/images
 ```
 
-Install python packages
+Install python requirements
 
 ```
 $ (optional) python3 -m venv venv
@@ -50,23 +56,19 @@ $ (optional) source venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-Scrape moon phase data from timeanddate.com
+Setup and install
 
 ```
-$ python3 phase-scrapper.py > phase-schedule.json
+# chmod +x setup_and_install.sh
+# ./setup_and_install.sh
 ```
 
-Create schedule based on phases
+Look inside this shell script file to see the different steps taken
 
-```
-$ python3 python3 daily_schedule.py > img-schedule.json
-```
 
-Finally create a cron job for replacing the wallpaper every 2 hours with the corresponding moon phase
+Now your background should be updated with the current phase of the moon in your location and every 2 hours it will update.
 
-```
-$ python3 crontab_setter.py
-```
+**Enjoy :)**
 
 
 ## Sources
@@ -75,9 +77,7 @@ $ python3 crontab_setter.py
 - https://www.timeanddate.com/moon/phases/
 
 
-## Notes
-
-### Phase Orientation Legend
+## Phase Orientation Legend
 
 | Angle | Phase         | Eye View                           |
 |-------|---------------|------------------------------------|
@@ -87,11 +87,17 @@ $ python3 crontab_setter.py
 | 270   | Last Quarter  | Sun directly to left               |
 | 360   | New Moon      | Sun horizontally aligned with Moon |
 
-### Other
+
+## Notes
 
 List all cron jobs (of current user):
 ```
 crontab -l
+```
+
+Edit cron jobs to remove background update:
+```
+crontab -e
 ```
 
 Bash without profile:
