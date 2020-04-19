@@ -2,6 +2,8 @@
 
 Update your wallpaper with the an image of the real time phase of the moon in your location.
 
+![animate-moon](images/moon.gif)
+
 Currently working with Ubuntu running Gnome 3.34.1
 Also had it working on Mate, see `change_background.py`. By changing the calls from `gsettings` to `dconf` it should work for Mate.
 
@@ -24,7 +26,7 @@ Also had it working on Mate, see `change_background.py`. By changing the calls f
 
 ## Install
 
-Clone this repository in your **home directory**!
+Clone this repository in your **home directory!**:
 
 ```
 $ cd ~
@@ -32,23 +34,23 @@ $ git clone https://github.com/sguldemond/moon-paper
 $ cd moon-paper
 ```
 
-Download pictures of the moon
+Download pictures of the moon:
 
 (http://neoprogrammics.com/ > Lunar Phase Image Sets > near_side_1024x1024X8.7z)
 
-or
+_or_
 
 ```
 $ wget http://neoprogrammics.com/lunar_phase_images/downloads/near_side_1024x1024x8.7z
 ```
 
-Extract the images
+Extract the images:
 
 ```
 $ 7za x near_side_1024x1024x8.7z -o/home/$USER/moon-paper/images
 ```
 
-Install python requirements
+Install python requirements:
 
 ```
 $ (optional) python3 -m venv venv
@@ -56,14 +58,14 @@ $ (optional) source venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-Setup and install
+Setup and install:
 
 ```
 # chmod +x setup_and_install.sh
 # ./setup_and_install.sh
 ```
 
-Look inside this shell script file to see the different steps taken
+Look inside this shell script file to see the different steps taken.
 
 
 Now your background should be updated with the current phase of the moon in your location and every 2 hours it will update.
@@ -87,6 +89,18 @@ Now your background should be updated with the current phase of the moon in your
 | 270   | Last Quarter  | Sun directly to left               |
 | 360   | New Moon      | Sun horizontally aligned with Moon |
 
+## Moon gif
+
+Images used:
+http://neoprogrammics.com/lunar_phase_images/downloads/near_side_256x256x8.7z
+
+Create GIF:
+
+```
+# apt install imagemagick
+$ convert -delay 10 -loop 1 *.png moon.gif
+$ animate moon.gif
+```
 
 ## Notes
 

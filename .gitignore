@@ -5,7 +5,9 @@
 venv/
 
 # Project
-images/
+images/near_side_*
 geckodriver.log
 
+# Files
 *.json
+*.7z
