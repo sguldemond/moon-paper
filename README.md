@@ -132,5 +132,5 @@ From `man dconf`: _"Note that dconf needs a D-Bus session bus connection to writ
 # dbus-launch
 # export $(dbus-launch)
 ```
-s
+
 Source: https://stackoverflow.com/questions/41242460/how-to-export-dbus-session-bus-address
