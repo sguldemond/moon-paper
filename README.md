@@ -7,7 +7,7 @@ Update your wallpaper with the an image of the real time phase of the moon in yo
 Currently working with Ubuntu running Gnome 3.34.1
 Also had it working on Mate, see `change_background.py`. By changing the calls from `gsettings` to `dconf` it should work for Mate.
 
-## Requirements
+## 📋 Requirements
 
 - Python3 (optional: python3-venv)
 ```
@@ -24,9 +24,9 @@ Also had it working on Mate, see `change_background.py`. By changing the calls f
 # apt install p7zip-full
 ```
 
-## Install
+## 🔧 Install
 
-Clone this repository in your **home directory!**:
+**Clone this repository in your _home directory!_**:
 
 ```
 $ cd ~
@@ -65,22 +65,22 @@ $ pip install -r requirements.txt
 # ./setup_and_install.sh
 ```
 
-Look inside this shell script file to see the different steps taken.
+_Look inside this shell script file to see the different steps taken._
 
 
-Now your background should be updated with the current phase of the moon in your location and every 2 hours it will update.
+Now your background should be changed to the current phase of the moon in your location and will update every 2 hours.
 
 **Enjoy and get in sync with the moon!**
 
 
-## Sources
+## 🌐 Sources
 
 - http://neoprogrammics.com/lunar_phase_images/ (Images licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/]))
 - https://www.timeanddate.com/moon/phases/
 - https://commons.wikimedia.org/wiki/User:JayTanner/lunar-west-side-phase-set
 
 
-## Phase Orientation Legend
+## 🌘 Phase Orientation Legend
 
 | Angle | Phase         | Eye View                           |
 |-------|---------------|------------------------------------|
@@ -90,7 +90,7 @@ Now your background should be updated with the current phase of the moon in your
 | 270   | Last Quarter  | Sun directly to left               |
 | 360   | New Moon      | Sun horizontally aligned with Moon |
 
-## Moon gif
+## 🎞️ Moon GIF
 
 Images used:
 http://neoprogrammics.com/lunar_phase_images/downloads/near_side_256x256x8.7z
@@ -103,7 +103,7 @@ $ convert -delay 10 -loop 1 *.png moon.gif
 $ animate moon.gif
 ```
 
-## Notes
+## 📓 Notes
 
 List all cron jobs (of current user)
 ```
