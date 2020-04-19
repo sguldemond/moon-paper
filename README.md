@@ -27,12 +27,17 @@ Also had it working on Mate, see [change_background.py](change_background.py). B
 
 ## 🔧 Install
 
-**Clone this repository in your _home directory!_**:
+**Clone this repository**
 
 ```
 $ cd ~
 $ git clone https://github.com/sguldemond/moon-paper
 $ cd moon-paper
+```
+
+**Setup folder for in home directory**
+```
+$ mkdir ~/moon-paper
 ```
 
 **Download pictures of the moon**
@@ -66,7 +71,7 @@ $ pip install -r requirements.txt
 # ./setup_and_install.sh
 ```
 
-_Look inside this shell script file to see the different steps taken._
+_Look inside this shell script to see the different steps taken._
 
 
 Now your background should be changed to the current phase of the moon in your location and will update every 2 hours.
