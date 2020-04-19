@@ -10,7 +10,7 @@ def set_angle():
 
     now = datetime.datetime.now()
 
-    with open("/home/{user}/moon-paper/img-schedule-2020.json".format(user=user), 'r') as f:
+    with open("/home/{user}/moon-paper/img-schedule.json".format(user=user), 'r') as f:
         schedule_json = f.read()
         img_schedule = json.loads(schedule_json)
 
