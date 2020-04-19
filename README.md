@@ -1,28 +1,81 @@
-## Moon Paper
+# Moon Paper
 
-Update your wallpaper with the an image of the current phase of the moon.
+Update your wallpaper with the an image of the real time phase of the moon.
+
+Currently working with Ubuntu running Gnome 3.34.1
 
 *Work in progress:*
-Want to work towards being able to just define your location, e.g. 'netherlands/amsterdam',
-and get the current moon phase based on your location as live wallpaper.
+Depending on your location you can download 
 
-### Requirements
+## Requirements
 
-Geckodriver (for scraping 'timeanddate.com/moon/phases'):
+- Python3 (optional: python3-venv)
 ```
-sudo apt install firefox-geckodriver
+# apt install python3-venv
 ```
 
-Download pictures of the moon at:
+- Geckodriver (for scraping 'timeanddate.com/moon/phases'):
+```
+# apt install firefox-geckodriver
+```
 
-http://neoprogrammics.com/ > Lunar Phase Image Sets > near_side_1024x1024X8.7z
+- 7zip (for unpacking pictures of the moon):
+```
+# apt install p7zip-full
+```
+
+## Install
+
+Clone this repository in your home directory
+
+```
+$ cd ~
+$ git clone https://github.com/sguldemond/moon-paper
+$ cd moon-paper
+```
+
+Download pictures of the moon
+(http://neoprogrammics.com/ > Lunar Phase Image Sets > near_side_1024x1024X8.7z)
+
+```
+$ wget http://neoprogrammics.com/lunar_phase_images/downloads/near_side_1024x1024x8.7z
+$ 7za x near_side_1024x1024x8.7z -o/home/$USER/moon-paper/images
+```
+
+Install python packages
+
+```
+$ (optional) python3 -m venv venv
+$ (optional) source venv/bin/activate
+$ pip install -r requirements.txt
+```
+
+Scrape moon phase data from timeanddate.com
+
+```
+$ python3 phase-scrapper.py > phase-schedule.json
+```
+
+Create schedule based on phases
+
+```
+$ python3 python3 daily_schedule.py > img-schedule.json
+```
+
+Finally create a cron job for replacing the wallpaper every 2 hours with the corresponding moon phase
+
+```
+$ python3 crontab_setter.py
+```
 
 
-### Sources
+## Sources
 
 - https://commons.wikimedia.org/wiki/User:JayTanner/lunar-west-side-phase-set
-- https://www.timeanddate.com/moon/phases/netherlands/amsterdam
+- https://www.timeanddate.com/moon/phases/
 
+
+## Notes
 
 ### Phase Orientation Legend
 
@@ -34,7 +87,7 @@ http://neoprogrammics.com/ > Lunar Phase Image Sets > near_side_1024x1024X8.7z
 | 270   | Last Quarter  | Sun directly to left               |
 | 360   | New Moon      | Sun horizontally aligned with Moon |
 
-### Notes
+### Other
 
 List all cron jobs (of current user):
 ```

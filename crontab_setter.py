@@ -2,17 +2,16 @@ from crontab import CronTab
 from datetime import datetime, timedelta
 
 import os
+import getpass
 
 dbus_var = os.environ.get('DBUS_SESSION_BUS_ADDRESS')
 
-cron = CronTab(user='stan')
+user = getpass.getuser()
+
+cron = CronTab(user=user)
 cron.env['DBUS_SESSION_BUS_ADDRESS'] = dbus_var
 
-job = cron.new(command='/home/stan/Projects/Other/moon-phases/change_background.py')
+job = cron.new(command="/home/{user}/moon-paper/change_background.py".format(user=user))
 job.hour.every(2)
-
-# now = datetime.now()
-# then = now + timedelta(minutes=1)
-# job.setall(then)
 
 cron.write()

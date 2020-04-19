@@ -7,10 +7,13 @@ from datetime import datetime
 
 options = Options()
 options.add_argument('--headless')
-driver = webdriver.Firefox(firefox_options=options, executable_path='/usr/bin/geckodriver')
+driver = webdriver.Firefox(options=options, executable_path='/usr/bin/geckodriver')
 
-url = 'https://www.timeanddate.com/moon/phases/netherlands/amsterdam'
-# url = 'file:///home/stan/Projects/Other/moon-phases/Moon%20Phases%202019%20%E2%80%93%20Lunar%20Calendar%20for%20Amsterdam,%20Netherlands.html'
+with open('./config.json', 'r') as config_file:
+    config = config_file.read()
+
+# location is set automatically based on location of user
+url = 'https://www.timeanddate.com/moon/phases/'
 driver.get(url)
 
 el = driver.find_elements_by_css_selector('table.zebra')
@@ -27,46 +30,40 @@ trs = soup.find('tbody').find_all('tr')
 
 phase_schedule = []
 
-year = 2019
 
-def get_date(date, time, year=2019):
+def get_date(date, time):
+    year = datetime.now().year
+    
     if date == '\xa0':
         return None
     
     date_string = '{0} {1} {2}'.format(date, year, time)
     return datetime.strptime(date_string, '%d %b %Y %H:%M').strftime('%Y-%m-%d %H:%M')
 
+
+def append_schedule(_type, _date, image_id):
+    phase_schedule.append({
+        'type': _type,
+        'date_time': _date,
+        'image_id': image_id
+    })
+
+
 for tr in trs:
     tds = tr.find_all('td')
     tds = tds[:8]
 
-    # full_cycle = []        
+    date1 = get_date(tds[0].text, tds[1].text)
+    if date1: append_schedule('New Moon', date1, '000')
 
-    phase_schedule.append({
-        'type': 'New Moon',
-        'date_time': get_date(tds[0].text, tds[1].text),
-        'image_id': '000'
-    })
+    date2 = get_date(tds[2].text, tds[3].text)
+    if date2: append_schedule('First Quarter', date2, '090')
 
-    phase_schedule.append({
-        'type': 'First Quarter',
-        'date_time': get_date(tds[2].text, tds[3].text),
-        'image_id': '090'
-    })
+    date3 = get_date(tds[4].text, tds[5].text)
+    if date3: append_schedule('Full Moon', date3, '180')
 
-    phase_schedule.append({
-        'type': 'Full Moon',
-        'date_time': get_date(tds[4].text, tds[5].text),
-        'image_id': '180'
-    })
-
-    phase_schedule.append({
-        'type': 'Third Quarter',
-        'date_time': get_date(tds[6].text, tds[7].text),
-        'image_id': '270'
-    })
-
-    # phase_schedule.append(full_cycle)
-
+    date4 = get_date(tds[6].text, tds[7].text)
+    if date4: append_schedule('Third Quarter', date4, '270')
+    
 
 print(json.dumps(phase_schedule))

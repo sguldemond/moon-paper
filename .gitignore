@@ -7,3 +7,5 @@ venv/
 # Project
 images/
 geckodriver.log
+
+*.json

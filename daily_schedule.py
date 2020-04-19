@@ -4,7 +4,7 @@ import time
 
 fmt = '%Y-%m-%d %H:%M'
 
-with open('phase-schedule-2019.json', 'r') as f:
+with open('./phase-schedule.json', 'r') as f:
     phase_json = f.read()
     phase_schedule = json.loads(phase_json)
 
