@@ -4,17 +4,18 @@ Update your wallpaper with the an image of the real time phase of the moon in yo
 
 ![animate-moon](images/moon.gif)
 
-Currently working with Ubuntu running Gnome 3.34.1
-Also had it working on Mate, see `change_background.py`. By changing the calls from `gsettings` to `dconf` it should work for Mate.
+Currently working with Ubuntu 19.10 running Gnome 3.34.1
+
+Also had it working on Mate, see [change_background.py](change_background.py). By changing the calls from `gsettings` to `dconf` it should work for Mate.
 
 ## 📋 Requirements
 
 - Python3 (optional: python3-venv)
 ```
-# apt install python3-venv
+# apt install python3 python3-venv
 ```
 
-- Geckodriver (for scraping 'timeanddate.com/moon/phases'):
+- Geckodriver (for scraping https://timeanddate.com/moon/phases):
 ```
 # apt install firefox-geckodriver
 ```
@@ -36,7 +37,7 @@ $ cd moon-paper
 
 **Download pictures of the moon**
 
-(http://neoprogrammics.com/ > Lunar Phase Image Sets > near_side_1024x1024X8.7z)
+http://neoprogrammics.com/ > Lunar Phase Image Sets > near_side_1024x1024X8.7z
 
 _or_
 
@@ -75,7 +76,7 @@ Now your background should be changed to the current phase of the moon in your l
 
 ## 🌐 Sources
 
-- http://neoprogrammics.com/lunar_phase_images/ (Images licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/]))
+- http://www.neoprogrammics.com/lunar_phase_images/ (Images licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/]))
 - https://www.timeanddate.com/moon/phases/
 - https://commons.wikimedia.org/wiki/User:JayTanner/lunar-west-side-phase-set
 
