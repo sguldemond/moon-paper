@@ -6,8 +6,10 @@ venv/
 
 # Project
 images/near_side_*
+images/wallpapers/
 geckodriver.log
 
 # Files
 *.json
 *.7z
+*.pyc

@@ -81,7 +81,7 @@ Now your background should be changed to the current phase of the moon in your l
 
 ## 🌐 Sources
 
-- http://www.neoprogrammics.com/lunar_phase_images/ (Images licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/]))
+- http://www.neoprogrammics.com/lunar_phase_images/ (Images licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/))
 - https://www.timeanddate.com/moon/phases/
 - https://commons.wikimedia.org/wiki/User:JayTanner/lunar-west-side-phase-set
 
@@ -105,7 +105,7 @@ http://neoprogrammics.com/lunar_phase_images/downloads/near_side_256x256x8.7z
 
 ```
 # apt install imagemagick
-$ convert -delay 10 -loop 1 *.png moon.gif
+$ convert -delay 10 -loop 0 *.png moon.gif
 $ animate moon.gif
 ```
 
